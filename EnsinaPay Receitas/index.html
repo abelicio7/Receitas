@@ -148,8 +148,8 @@ async function pagar() {
     if (!token) throw new Error("Token inválido");
 
     const endpoint = metodoSelecionado === 'mpesa'
-      ? 'https://e2payments.explicador.co.mz/v1/c2b/mpesa-payment/993729'
-      : 'https://e2payments.explicador.co.mz/v1/c2b/emola-payment/993730';
+      ? 'https://e2payments.explicador.co.mz/v1/c2b/mpesa-payment/999813'
+      : 'https://e2payments.explicador.co.mz/v1/c2b/emola-payment/999814';
 
     const resposta = await fetch(endpoint, {
       method: 'POST',
