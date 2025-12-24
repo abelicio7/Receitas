@@ -187,7 +187,7 @@ async function pagar() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           title: "💰 Venda Realizada!",
-          text: `Cliente: ${nome} - Valor: ${valor} MT`,
+          text: `Cliente: ${nome} - Valor: ${valor} MT - Whatsapp: ${whatsapp}`,
           sound: "default"
         })
       });
