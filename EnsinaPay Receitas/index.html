@@ -105,7 +105,7 @@ function selectMetodo(metodo) {
 
 async function pagar() {
   const nome = document.getElementById("nome").value.trim();
-  const email = document.getElementById("email").value.trim();
+  const whatsapp = document.getElementById("whatsapp").value.trim();
   const numero = document.getElementById("numero").value.trim();
   const valorTexto = document.getElementById("preco").textContent.trim();
   const valor = valorTexto.replace(" MT", "").replace(",", ".");
@@ -113,7 +113,7 @@ async function pagar() {
   const btnText = document.getElementById("btn-text");
   const btnSpinner = document.getElementById("btn-spinner");
 
-  if (!nome || !email || !numero) {
+  if (!nome || !whatsapp || !numero) {
     Swal.fire('Campos obrigatórios!', 'Por favor preencha todos os campos.', 'error');
     return;
   }
@@ -170,7 +170,7 @@ async function pagar() {
     console.log("RESPOSTA COMPLETA:", JSON.stringify(resultado, null, 2));
 
     if (resultado.success && resultado.success.includes("sucesso")) {
-      localStorage.setItem("email", email);
+      localStorage.setItem("whatsapp", whatsapp);
       localStorage.setItem("telefone", numero);
 
       try {
@@ -201,7 +201,7 @@ async function pagar() {
         body: JSON.stringify({
           valor: parseFloat(valor),
           nome: "radical",
-          email: email,
+          whatsapp: whatsapp,
           telefone: numero,
           utm_source: localStorage.getItem("utm_source"),
           utm_medium: localStorage.getItem("utm_medium"),
